@@ -1,0 +1,45 @@
+		;MOV		R0,#0x00000100
+		;MOV		R1,#0x00000104
+		;MOV		R2,#0xAFFFFEE6
+		;MOV		R3,#0x00000882
+		;MOV		R4,#0x11223344
+		;MOV		R0,R1
+		;LDR		R1,[R0],#-4
+
+Start MOV R1,#-5
+	 SUB R0,R0,R0
+Loop  CMP R1,#1
+	 BGT Exit
+	 ADD R0,R0,R1
+	 ADD R1,R1,#2
+	 B LOOP
+
+		
+		
+		ADD		R0,R0,#3
+		MOV		R1,R0
+		MOV		R0,#0x100 ;right rotate 8-bit value of 0x01 with n=12
+		
+		STR		R1,[R0]
+		LDR		R3,[R0]
+		B		CodeB
+		STR		PC, [R0]
+		MOV		R3,#0xFF
+		
+		LDR		R2,[R0]
+		ADC		R4,R1,R2
+		MOV		R1,R0
+		STR		PC, [R1,#4]!
+		
+		MOVS		R3,#0
+		
+		
+		
+		LDR		R1,[R0]
+		LDRB		R2,[R0]
+		;LDR		R1,[R0]
+		
+		
+CodeB	;MOV		R0,R2
+		LDR		R3, [R0]
+		MOV		PC,#0x20

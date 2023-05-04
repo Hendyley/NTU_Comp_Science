@@ -1,0 +1,19 @@
+Num1		DCD		0x20
+Num2		DCD		0x14
+Result	DCD		0
+		ADR		SP, 0xFFFFFFFC
+		
+
+
+
+		bl		Mean
+
+	
+		END
+		
+		
+Mean		
+
+
+		
+		mov		pc,lr
