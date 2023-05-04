@@ -1,0 +1,24 @@
+﻿Tick,ready list,current thread,Timer Interrupt triggered,Thread completion,Context switch
+40,"child1, child2, child3",main,Timer interrupt scheduled at 80,,main -> child1
+50,"child2, child3, main",child1,Timer interrupt scheduled at 80,Thread 1 Completed,child1 -> child2
+60,"child3,main",child2,Timer interrupt scheduled at 80,Thread 2 Completed,child2 -> child3
+70,main,child3,Timer interrupt scheduled at 80,Thread 3 Completed,child3 -> main
+80,,main,Timer interrupt scheduled at 120,,main->main
+120,"child4, child5, child6",main,Timer interrupt scheduled at 160,,main-> child4
+130,"child5, child6, main",child4,Timer interrupt scheduled at 160,Thread 4 Completed,child4 ->child5
+140,"child6, main",child5,Timer interrupt scheduled at 160,Thread 5 Completed,child5->child6
+150,main,child6,Timer interrupt scheduled at 160,Thread 6 Completed,child6->main
+160,,main,Timer interrupt scheduled at 200,,main->main
+200,"child7, child8, child9",main,Timer interrupt scheduled at 240,,main->child7
+210,"child8, chilld9, main",child7,Timer interrupt scheduled at 240,Thread 7 Completed,child7->child8
+220,"chilld9, main",child8,Timer interrupt scheduled at 240,Thread 8 Completed,child8->child9
+230,main,child9,Timer interrupt scheduled at 240,Thread 9 Completed,child9->main
+240,,main,Timer interrupt scheduled at 280,,main->main
+250,,main,Timer interrupt scheduled at 280,Thread 0 Completed,main->main
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,"child7, child8, child9",,,,
