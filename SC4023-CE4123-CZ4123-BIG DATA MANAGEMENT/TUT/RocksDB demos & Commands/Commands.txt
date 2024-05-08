@@ -1,0 +1,57 @@
+# Prepare dependencies
+sudo apt-get install libsnappy-dev zlib1g-dev libbz2-dev libbz2-dev liblz4-dev libzstd-dev
+sudo apt-get install libgflags-dev
+
+# Clone RocksDB repository
+
+git clone https://github.com/facebook/rocksdb.git
+cd ./rocksdb
+
+# Compile
+make static_lib
+
+gedit ./examples/Makefile
+
+/* 
+demo_wr: librocksdb demo_wr.cc
+	$(CXX) $(CXXFLAGS) $@.cc -o$@ ../librocksdb.a -I../include -O2 -std=c++17 $(PLATFORM_LDFLAGS) $(PLATFORM_CXXFLAGS) $(EXEC_LDFLAGS)
+demo_d: librocksdb demo_d.cc
+	$(CXX) $(CXXFLAGS) $@.cc -o$@ ../librocksdb.a -I../include -O2 -std=c++17 $(PLATFORM_LDFLAGS) $(PLATFORM_CXXFLAGS) $(EXEC_LDFLAGS)
+demo_seek: librocksdb demo_seek.cc
+	$(CXX) $(CXXFLAGS) $@.cc -o$@ ../librocksdb.a -I../include -O2 -std=c++17 $(PLATFORM_LDFLAGS) $(PLATFORM_CXXFLAGS) $(EXEC_LDFLAGS)
+demo_insert: librocksdb demo_insert.cc
+	$(CXX) $(CXXFLAGS) $@.cc -o$@ ../librocksdb.a -I../include -O2 -std=c++17 $(PLATFORM_LDFLAGS) $(PLATFORM_CXXFLAGS) $(EXEC_LDFLAGS)
+*/
+
+
+# Demo1: write/read
+
+cd ./examples
+make ./demo_wr
+./demo_wr
+
+// Demo2: delete
+
+make ./demo_d
+./demo_d
+
+// Demo3: range read
+
+make ./demo_seek
+./demo_seek
+
+// View property
+
+make ./demo_insert
+./demo_insert
+./demo_insert
+
+ls /tmp/rocksdb_simple_example
+
+cd ..
+
+DEBUG_LEVEL=0 make ldb
+./ldb manifest_dump --path="/tmp/rocksdb_simple_example/MANIFEST-000010"
+
+DEBUG_LEVEL=0 make sst_dump
+./sst_dump --file=/tmp/rocksdb_simple_example/000018.sst --show_properties

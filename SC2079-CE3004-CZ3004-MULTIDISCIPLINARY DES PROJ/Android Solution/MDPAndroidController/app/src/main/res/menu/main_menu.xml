@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/btnBluetooth"
+        android:icon="@drawable/connect_button"
+        android:title="Bluetooth"
+        app:showAsAction="ifRoom" />
+
+<!--    <item-->
+<!--        android:id="@+id/menu_print_mdf"-->
+<!--        app:showAsAction="collapseActionView"-->
+<!--        android:title="Print MDF String"/>-->
+
+<!--    <item-->
+<!--        android:id="@+id/menu_show_mapInfo"-->
+<!--        app:showAsAction="collapseActionView"-->
+<!--        android:title="Show Map Info"/>-->
+
+</menu>
