@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/btnRefresh"
+        android:icon="@drawable/reset_button"
+        android:title="Refresh"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/btnLogic"
+        android:icon="@drawable/o_click_icon"
+        android:title="Logic"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/btnRefreshDevicesList"
+        app:showAsAction="always"
+        android:onClick="scanNewDevices"
+        android:title="@string/refresh_devices_title" />
+</menu>

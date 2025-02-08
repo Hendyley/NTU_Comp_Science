@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    <EditText-->
+<!--        android:id="@+id/TestText"-->
+<!--        android:layout_width="210dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="4dp"-->
+<!--        android:layout_marginTop="34dp"-->
+<!--        android:layout_marginBottom="36dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:text=""-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/BluetoothHeaderTitle"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:text="Bluetooth"-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="30sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/relativeLayout"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <Switch
+        android:id="@+id/bluetoothSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:layout_marginStart="5dp"
+        android:splitTrack="false"
+        android:text="BLUETOOTH OFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bluetoothSwitch"
+        android:orientation="vertical"
+        tools:context=".bluetooth.BluetoothActivity">
+
+
+        <TextView
+            android:id="@+id/tvDeviceStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/device_status"
+            android:textColor="@color/dark_green"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/BluetoothButton"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_below="@+id/tvDeviceStatus"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:srcCompat="@drawable/bluetooth_icon" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/ScanningButton"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_below="@+id/tvDeviceStatus"-->
+<!--            android:layout_marginStart="80dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:onClick="Bluetooth_discoverable_on_off"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/BluetoothButton"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:srcCompat="@drawable/network_icon" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/DiscoveryButton"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_below="@+id/tvDeviceStatus"-->
+<!--            android:layout_marginStart="140dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:onClick="Bluetooth_discoverable"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/ScanningButton"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:srcCompat="@drawable/search_icon" />-->
+
+        <!--    <Switch-->
+        <!--        android:id="@+id/bluetoothSwitch"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_margin="10dp"-->
+        <!--        android:layout_marginLeft="20dp"-->
+        <!--        android:layout_alignParentEnd="true"-->
+        <!--        android:layout_alignParentRight="true"-->
+        <!--        android:layout_marginStart="20dp"-->
+        <!--        android:splitTrack="false"-->
+        <!--        android:text="BLUETOOTH OFF"-->
+        <!--        />-->
+
+        <TextView
+            android:id="@+id/tvPaired"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDeviceStatus"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/paired_devices_label"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/pairedDevLayout"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/tvPaired"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lvPairedDevices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvAvail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pairedDevLayout"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/available_devices_label"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/availDevLayout"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/tvAvail"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lvAvailDevices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ly1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_below="@+id/availDevLayout"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <ListView-->
+<!--                android:id="@+id/tl1"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="wrap_content"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/t1"-->
+<!--                android:layout_width="207dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="TextView" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/e1"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="wrap_content" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/b1"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="wrap_content" />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ButtonLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:layout_below="@+id/availDevLayout"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/DiscoveryButton"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:srcCompat="@drawable/search_icon" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/LogicButton"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:srcCompat="@drawable/o_click_icon" />-->
+
+<!--        </LinearLayout>-->
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

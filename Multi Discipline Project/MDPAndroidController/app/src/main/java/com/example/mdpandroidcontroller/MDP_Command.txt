@@ -1,0 +1,60 @@
+Acknowledges commands + Tested on simulator:
+
+ROBOT, 3, 7, S
+{"cat": "location", "value": {"x": 1, "y": 1, "d": 0}}	
+{"cat": "location", "value": {"x": 18, "y": 18, "d": 0}}    
+{"cat": "location", "value": {"x": 8, "y": 8, "d": 0}}    
+
+TARGET, 4, 10															
+{"cat": "image-rec", "value": {"image_id": "A", "obstacle_id":  "1"}}
+{"cat": "status", "value": "info"}
+{"cat": "info", "value": "info"}
+{"cat": "error", "value": "Command queue is empty, did you set obstacles?"}
+
+
+Sending command:
+
+{"cat": "moves", "value": {"command": "f", "reverse":  "0"}}
+{"cat": "obstacles", "value": {"obstacles": [{"x": 6, "y": 10, "id": 4, "d": 1}],"mode": "W"} }
+{"cat": "control", "value": "start"}
+{"cat": "control", "value": "path"}
+
+
+
+
+Not implementd command:
+
+{"cat": "obstacles", "value": {"obstacles": {"x": 6, "y": 10, "id": 4}}}
+{"cat": "obstacles", "value": "Obstacle OUT : 3"}
+{"cat": "location", "value": {"x": 1, "y": 1, "d": 0}}
+
+
+rotate
+- resume
+- destroy
+- resume
+
+On 
+m onCreate
+m resume
+
+main -> connect
+m Onpause
+c OnCreate
+C Resume
+m Onstop
+
+click (shows something)
+c onpause
+c resume
+
+Connect -> main
+c onpause
+m onCreate
+m resume
+
+
+close
+m onpause
+m onstop
+m ondestroy
